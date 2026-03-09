@@ -1,0 +1,518 @@
+/* ===============================================
+   GLOBAL STYLES
+=================================================*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&family=Poppins:wght@400;600&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #e6f0fa; /* Cool, calm background */
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===============================================
+   WRAPPER & SIDEBAR
+=================================================*/
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+    width: 220px;
+    background-color: #1e3a8a; /* deep blue */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.sidebar h2 {
+    font-family: 'Roboto Slab', serif;
+    margin-bottom: 30px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar ul li {
+    width: 100%;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 15px 20px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #3b5bbc;
+    border-left: 5px solid #ffd700;
+}
+
+/* ===============================================
+   MAIN CONTENT
+=================================================*/
+.main-content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.page-title {
+    font-family: 'Roboto Slab', serif;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ===============================================
+   DASHBOARD INFO BOXES
+=================================================*/
+.info-boxes {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.info-box {
+    flex: 1;
+    min-width: 160px;
+    background: linear-gradient(135deg, #4f46e5, #3b82f6);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.info-box span {
+    display: block;
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* ---------- TOP SELLING PRODUCTS TABLE ---------- */
+.top-products h2 {
+    margin-bottom: 15px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.top-products-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.top-products-table th,
+.top-products-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.top-products-table th {
+    background: linear-gradient(135deg, #4f46e5, #3b82f6); /* MATCH DASHBOARD BOXES */
+    color: white;
+    font-weight: 600;
+}
+
+.top-products-table tr:nth-child(even) {
+    background: #f3f6ff; /* soft, light blue */
+}
+
+.top-products-table tr:hover {
+    background: rgba(79, 70, 229, 0.1); /* subtle hover effect in box color */
+}
+
+/* ===============================================
+   FORMS (INVENTORY / BILLING)
+=================================================*/
+.dashboard input,
+.dashboard select,
+.dashboard button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.dashboard select {
+    background-color: #fff;
+}
+
+.dashboard button {
+    background: #4f46e5;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.dashboard button:hover {
+    background: #3b82f6;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ===============================================
+   CARD BOXES (Forms / Inventory Add)
+=================================================*/
+.card-box {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+/* ===============================================
+   LOGIN PAGE (keep previous styling)
+=================================================*/
+.login-container {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.login-container h2 {
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    margin-bottom: 25px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background: #4f46e5;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.login-container button:hover {
+    background: #3b82f6;
+}
+
+/* ===============================================
+   TABLES (INVENTORY / BILLING)
+=================================================*/
+.inventory-table, .billing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+}
+
+.inventory-table th, .inventory-table td,
+.billing-table th, .billing-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.inventory-table th, .billing-table th {
+    background: #3b82f6;
+    color: white;
+}
+
+.inventory-table tr:nth-child(even),
+.billing-table tr:nth-child(even) {
+    background: #f3f6ff;
+}
+
+/* ===============================================
+   RESPONSIVE
+=================================================*/
+@media (max-width: 1024px) {
+    .info-boxes {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 200px;
+    }
+}
+/* ================================
+   INVENTORY PAGE STYLES ONLY
+   ================================ */
+
+/* Inventory page container */
+.main-content {
+    padding: 30px;
+}
+
+/* Page title */
+.page-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #1e3a8a;
+}
+
+/* -------- Add Product Card (Center) -------- */
+.card-form {
+    background: #ffffff;
+    width: 450px;
+    margin: 0 auto 35px auto;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-sizing: border-box;
+}
+.card-form form {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+.card-form input,
+.card-form button {
+    width: 100%;
+    padding: 11px;
+    margin-top: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.card-form button {
+    background: #4f46e5;
+    color: white;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.card-form button:hover {
+    background: #3b82f6;
+}
+
+/* -------- Product List Table Card -------- */
+.table-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+/* -------- Table -------- */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.data-table th {
+    background: #1e3a8a;
+    color: white;
+    padding: 12px;
+    font-size: 14px;
+}
+
+.data-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* -------- Status Column -------- */
+.data-table td:nth-child(6) {
+    font-weight: 600;
+}
+
+/* -------- Action Buttons -------- */
+.edit-btn {
+    color: #4f46e5;
+    font-size: 18px;
+    text-decoration: none;
+    margin-right: 8px;
+}
+
+.delete-btn {
+    color: #e11d48;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+    opacity: 0.7;
+}
+/* ===============================
+   BILLING PAGE – FINAL CSS
+   =============================== */
+
+/* Billing & Invoice container */
+.billing-box,
+.invoice-box {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    max-width: 1000px;
+    margin: 0 auto 30px auto;
+}
+
+/* Force invoice visibility (IMPORTANT FIX) */
+.invoice-box {
+    display: block !important;
+}
+
+/* Product row layout */
+.bill-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+    margin-bottom: 14px;
+}
+
+/* Dropdown & input */
+.bill-row select,
+.bill-row input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    font-size: 15px;
+    outline: none;
+}
+
+.bill-row select:focus,
+.bill-row input:focus {
+    border-color: #6366f1;
+}
+
+/* Add product button */
+.add-row-btn {
+    width: 100%;
+    background: #eef2ff;
+    color: #3730a3;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 14px;
+}
+
+.add-row-btn:hover {
+    background: #e0e7ff;
+}
+
+/* Generate & Print button */
+.generate-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #4f46e5, #3b82f6);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.generate-btn:hover {
+    opacity: 0.9;
+}
+
+/* Invoice header info */
+.invoice-box strong {
+    color: #1e293b;
+}
+
+/* Invoice table */
+.invoice-box .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+}
+
+.invoice-box .data-table th {
+    background: #f1f5f9;
+    color: #0f172a;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+}
+
+.invoice-box .data-table td {
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+/* Grand total row */
+.invoice-box .data-table tr:last-child th {
+    background: #e0e7ff;
+    font-size: 16px;
+}
+
+/* Page title spacing fix */
+.page-title {
+    margin-bottom: 25px;
+}
+/* ===== CENTER BILL ROW ===== */
+.billing-box .bill-row {
+    grid-template-columns: 1fr 1fr; /* make dropdown + quantity equal width */
+    max-width: 500px;               /* limit width of the row */
+    margin: 0 auto 14px auto;       /* center horizontally */
+}
+
+.bill-row select,
+.bill-row input {
+    width: 100%; /* fill the column space */
+}
+
+/* CENTER BUTTONS */
+.add-row-btn,
+.generate-btn {
+    max-width: 300px;              /* optional max width */
+    margin: 0 auto 14px auto;      /* center horizontally */
+    display: block;
+}

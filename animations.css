@@ -1,0 +1,323 @@
+/* ------------------------------
+   GLOBAL SMOOTHNESS
+--------------------------------*/
+* {
+    scroll-behavior: smooth;
+}
+
+/* ------------------------------
+   SIDEBAR – soft appear
+--------------------------------*/
+.sidebar {
+    opacity: 0;
+    animation: sidebarFade 0.6s ease forwards;
+}
+
+@keyframes sidebarFade {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ------------------------------
+   PAGE TITLE – calm fade
+--------------------------------*/
+.page-title {
+    opacity: 0;
+    animation: titleFade 0.6s ease forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes titleFade {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ------------------------------
+   INFO BOXES – elegant stagger
+--------------------------------*/
+.info-box {
+    opacity: 0;
+    transform: scale(0.96);
+    animation: infoFade 0.6s ease forwards;
+}
+
+/* stagger effect */
+.info-box:nth-child(1) { animation-delay: 0.3s; }
+.info-box:nth-child(2) { animation-delay: 0.4s; }
+.info-box:nth-child(3) { animation-delay: 0.5s; }
+.info-box:nth-child(4) { animation-delay: 0.6s; }
+.info-box:nth-child(5) { animation-delay: 0.7s; }
+
+@keyframes infoFade {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* hover – premium feel (no movement) */
+.info-box {
+    transition: box-shadow 0.3s ease;
+}
+
+.info-box:hover {
+    box-shadow: 0 14px 30px rgba(0,0,0,0.10);
+}
+
+/* ------------------------------
+   TOP PRODUCTS SECTION
+--------------------------------*/
+.top-products {
+    opacity: 0;
+    animation: sectionFade 0.6s ease forwards;
+    animation-delay: 0.9s;
+}
+
+@keyframes sectionFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ------------------------------
+   TABLE ROW – subtle hover
+--------------------------------*/
+.top-products-table tbody tr {
+    transition: background 0.3s ease;
+}
+
+.top-products-table tbody tr:hover {
+    background: rgba(99, 102, 241, 0.05);
+}
+/* ==============================
+   INVENTORY PAGE ANIMATION
+================================*/
+
+/* Add Product Box */
+.inventory-box {
+    opacity: 0;
+    transform: scale(0.97);
+    animation: inventoryFade 0.6s ease forwards;
+}
+
+@keyframes inventoryFade {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Product Table */
+.product-table {
+    opacity: 0;
+    animation: tableFade 0.6s ease forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes tableFade {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Table Row Hover */
+.product-table tbody tr {
+    transition: background 0.25s ease;
+}
+
+.product-table tbody tr:hover {
+    background: rgba(99, 102, 241, 0.05);
+}
+/* ==============================
+   BILLING PAGE ANIMATION
+================================*/
+
+/* Billing Form Box */
+.billing-box {
+    opacity: 0;
+    transform: scale(0.97);
+    animation: billingFade 0.6s ease forwards;
+}
+
+@keyframes billingFade {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Invoice Box */
+.invoice-box {
+    opacity: 0;
+    animation: invoiceFade 0.6s ease forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes invoiceFade {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Buttons – smooth hover */
+.generate-btn,
+.add-row-btn {
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.generate-btn:hover,
+.add-row-btn:hover {
+    box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+/* Invoice Table Rows */
+.invoice-box .data-table tbody tr {
+    transition: background 0.25s ease;
+}
+
+.invoice-box .data-table tbody tr:hover {
+    background: rgba(99, 102, 241, 0.05);
+}
+/* ==============================
+   PAGE LOADER
+================================*/
+
+#page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: loaderHide 0.6s ease forwards;
+    animation-delay: 0.8s;
+}
+
+@keyframes loaderHide {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Spinner */
+.loader {
+    width: 45px;
+    height: 45px;
+    border: 4px solid #e5e7eb;
+    border-top: 4px solid #6366f1;
+    border-radius: 50%;
+    animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* ==============================
+   DARK MODE
+================================*/
+
+body {
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Toggle button */
+.dark-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #e5e7eb;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    z-index: 10000;
+}
+
+.dark-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* DARK MODE BASE */
+body.dark {
+    background: #0f172a;
+    color: #e5e7eb;
+}
+
+/* Sidebar */
+body.dark .sidebar {
+    background: #020617;
+}
+
+/* Cards / Boxes */
+body.dark .info-box,
+body.dark .inventory-box,
+body.dark .billing-box,
+body.dark .invoice-box,
+body.dark .top-products {
+    background: #020617;
+    color: #e5e7eb;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+/* Tables */
+body.dark table {
+    background: #020617;
+    color: #e5e7eb;
+}
+
+body.dark th {
+    background: #020617;
+}
+
+/* Sidebar links */
+body.dark .sidebar ul li a {
+    color: #e5e7eb;
+}
+
+body.dark .sidebar ul li a.active {
+    background: rgba(99, 102, 241, 0.25);
+}
+
+/* Inputs */
+body.dark input,
+body.dark select {
+    background: #020617;
+    color: #e5e7eb;
+    border: 1px solid #334155;
+}
